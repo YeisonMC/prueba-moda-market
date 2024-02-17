@@ -6,7 +6,10 @@ function Home() {
 
   async function fetchProducts() {
     try {
-      const response = await fetch("/api/product");
+      //   const response = await fetch("/api/product");
+      const response = await fetch(
+        "https://prueba-moda-market-production.up.railway.app/api/product"
+      );
       const data = await response.json();
       setProducts(data.Product);
     } catch (error) {
