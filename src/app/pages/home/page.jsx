@@ -6,7 +6,7 @@ function Home() {
 
   async function fetchProducts() {
     try {
-      //   const response = await fetch("/api/product");
+      // const response = await fetch("/api/product");
       const response = await fetch(
         "https://prueba-moda-market-production.up.railway.app/api/product"
       );
