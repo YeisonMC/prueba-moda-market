@@ -10,7 +10,8 @@ export const metadata = {
 
 // TODO: SE INSTALO ESTAS 2 PARTES DE PRIMA: npm i prisma -D  Y  npm i @prisma/client
 // TODO: COMO SEGUNDO PASO INICIALIZAMOS PRIMA npx prisma init --datasource-provider postgresql
-//TODO: npx prisma migrate init --name init
+// TODO: npx prisma migrate init --name init
+//TODO: PARA INICIARLIZAR LAS TABLAS npx prisma db push
 
 export default function RootLayout({ children }) {
   return (
