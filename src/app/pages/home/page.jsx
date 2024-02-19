@@ -23,7 +23,7 @@ function Home() {
 
   return (
     <>
-      <div className="max-w-7xl bg-violet-300 mx-auto">
+      <div className="mt-20 max-w-7xl bg-violet-300 mx-auto">
         <h1>Productos</h1>
         <div className="">
           {products.map((product) => (
