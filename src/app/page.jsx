@@ -1,6 +1,13 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import "@/assets/styles/home.css";
+import "@/assets/styles/swiper.css";
+import Link from "next/link";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function App() {
   const [products, setProducts] = useState([]);
@@ -24,6 +31,34 @@ export default function App() {
 
   return (
     <>
+      <div className="">
+        <Swiper
+          pagination={{
+            dynamicBullets: true,
+          }}
+          modules={[Pagination]}
+          className="mySwiper"
+        >
+          <SwiperSlide className="bg-violet-400">
+            <img
+              src="https://media.gq.com.mx/photos/63f53660937b5d59a717b034/4:3/w_1999,h_1499,c_limit/ropa-barata-de-hombre-en-tendencia-febrero-2023.jpg"
+              alt=""
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp6sYr6ZyiffRXSCFPWE5ItxuvN8wCn_pf_g&usqp=CAU"
+              alt=""
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp6sYr6ZyiffRXSCFPWE5ItxuvN8wCn_pf_g&usqp=CAU"
+              alt=""
+            />
+          </SwiperSlide>
+        </Swiper>
+      </div>
       <div className="mt-20 w-11/12 max-w-screen-2xl mx-auto">
         <div className="text-center">
           <h1 className="font-extrabold text-3xl">La Colección De La Semana</h1>
@@ -53,12 +88,12 @@ export default function App() {
                   </p>
                 </div>
                 <div className="px-6 pt-2 pb-4 flex ">
-                  <a
-                    href="#"
+                  <Link
+                    href={"/pages/home/id"}
                     className="bg-black text-white rounded-lg py-2 text-center w-full"
                   >
                     Comprar
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
