@@ -33,12 +33,27 @@ export default function Navbar() {
         <ul className="flex gap-10 max-md:absolute max-md:top-full max-md:left-0 max-md:w-full max-md:bg-white max-md:block">
           <li className="max-md:mx-4 max-md:my-2">
             <Link href="/" className="text-black">
-              Home
+              Inicio
             </Link>
           </li>
           <li className="max-md:mx-4 max-md:my-2">
             <Link href="/pages/home" className="text-black">
               Tienda
+            </Link>
+          </li>
+          <li className="max-md:mx-4 max-md:my-2">
+            <Link href="#" className="text-black">
+              Ofertas
+            </Link>
+          </li>
+          <li className="max-md:mx-4 max-md:my-2">
+            <Link href="#" className="text-black">
+              Novedades
+            </Link>
+          </li>
+          <li className="max-md:mx-4 max-md:my-2">
+            <Link href="#" className="text-black">
+              Contacto
             </Link>
           </li>
           <li className="max-md:mx-4 max-md:my-2">

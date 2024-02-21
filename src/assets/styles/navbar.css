@@ -65,7 +65,8 @@ header::before {
   }
 
   #check:checked ~ ul {
-    height: 12em;
+    height: auto;
+    /* height: 12em; */
     /* height: 100vh; */
   }
 

@@ -15,6 +15,7 @@ export default function App() {
   async function fetchProducts() {
     try {
       // const response = await fetch("/api/product");
+      // const response = await fetch(`/api/product/${id}`);
       const response = await fetch(
         "https://prueba-moda-market-production.up.railway.app/api/product"
       );
@@ -59,17 +60,61 @@ export default function App() {
           </SwiperSlide>
         </Swiper>
       </div>
-      <div className="mt-20 w-11/12 max-w-screen-2xl mx-auto">
+
+      <div className="mt-10 w-11/12 max-w-screen-2xl mx-auto">
         <div className="text-center">
           <h1 className="font-extrabold text-3xl">La Colección De La Semana</h1>
           <p className="mt-4 md:w-7/12 mx-auto">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum
-            aliquam delectus dolor at cum quam quasi fuga repudiandae,
-            perspiciatis molestias quos vel illo voluptatibus perferendis beatae
-            iure voluptatem! Consequatur, sed!
+            Descubre los artículos y prendas más relevantes que hemos
+            seleccionado para ti esta semana. Una cuidada colección con lo
+            último en moda y las tendencias del momento.
           </p>
         </div>
-        <div className="mt-20 grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-6">
+
+        <div className="mt-20 grid grid-cols-2 max-md:bg-fuchsia-200 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mx-auto sm:max-w-xl lg:max-w-3xl xl:max-w-5xl">
+          {products.slice(0, 4).map((product) => (
+            // {products.map((product) => (
+            <a
+              href={`/pages/home/${product.id}`}
+              key={product.id}
+              target="_blank"
+            >
+              <div className="bg-white shadow rounded overflow-hidden ">
+                <div className="">
+                  <img
+                    className="w-full"
+                    src={product.imagen}
+                    alt={product.nombre}
+                  />
+                </div>
+                {/* <div className="w-[248px] h-auto mx-auto">
+                <img
+                  className="w-full"
+                  src={product.imagen}
+                  alt={product.nombre}
+                />
+              </div> */}
+                <div className="p-4">
+                  <h3 className="font-bold text-xl mb-2">{product.nombre}</h3>
+                  <p className="text-gray-500 text-sm text-dispers">
+                    {product.descripcion}
+                  </p>
+                  <p className="font-bold mt-2">{product.precio}</p>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+        {/* <div className="pt-6 text-center">
+          <Link
+            href={"/pages/home/id"}
+            className="bg-black text-white rounded-lg py-2 px-10"
+          >
+            Ver más
+          </Link>
+        </div> */}
+
+        {/* <div className="mt-20 grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-6">
           {products.map((product) => (
             <div className="max-w-64 max-md:max-w-56" key={product.id}>
               <div className="rounded shadow-lg">
@@ -83,7 +128,6 @@ export default function App() {
                 <div className="px-6 py-4">
                   <div className="font-bold text-xl mb-2">{product.nombre}</div>
                   <p className="text-gray-700 text-dispers">
-                    {/* <p class="text-gray-700 text-base whitespace-nowrap overflow-hidden text-ellipsis"> */}
                     {product.descripcion}
                   </p>
                 </div>
@@ -98,7 +142,7 @@ export default function App() {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </>
   );
